@@ -1,0 +1,20 @@
+:root {
+  /* ─── Color ──────────────────────────────────────────────── */
+  --color-hero-bg:         #ffffff;
+  --color-text-primary:    #0a0a0a;
+  --color-text-secondary:  #757575;
+
+  /* ─── Typography ─────────────────────────────────────────── */
+  --font-display:         'Geist Variable', 'Geist', system-ui, sans-serif;
+
+  /* Name spans ~85% of viewport width at all breakpoints */
+  --font-size-hero-name:  max(2.5rem, 15.5vw);
+  --font-size-hero-title: clamp(1rem, 1.5vw, 1.25rem);
+  --line-height-heading:  0.88;
+
+  /* ─── Spacing ────────────────────────────────────────────── */
+  --space-2:  0.5rem;
+  --space-4:  1rem;
+  --space-8:  2rem;
+  --space-16: 4rem;
+}
