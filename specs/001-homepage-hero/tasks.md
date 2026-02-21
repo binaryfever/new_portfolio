@@ -92,12 +92,11 @@ visible with JS disabled on desktop and mobile. This is the MVP.
 **Purpose**: Responsive layout validation, accessibility verification, type-checking, and
 Lighthouse CI gate (Constitution Principle III).
 
-- [ ] T024 Verify responsive layout in `src/components/sections/HeroSection.astro` at 320px, 768px, 1280px, and 2560px: hero name stays on one line at all breakpoints, title remains legible, no horizontal overflow; adjust `--font-size-hero-name` or padding tokens if any breakpoint breaks
-- [ ] T025 [P] Verify WCAG AA contrast: confirm `--color-text-primary` (#0a0a0a) vs `--color-hero-bg` (#ffffff) ≥ 4.5:1 and `--color-text-secondary` (#757575) vs `--color-hero-bg` (#ffffff) ≥ 4.5:1; update token values in `src/design-tokens/tokens.css` if below threshold
-- [ ] T026 [P] Run `npx astro check` from repository root; resolve all TypeScript errors to zero errors
-- [ ] T027 [P] Delete unused `src/islands/SkillsAnimation.svelte` (dropped in Phase 4 pivot); confirm `npm run build` still succeeds with zero errors
-- [ ] T028 Run Lighthouse CI gate: `npm run build && npm run preview`, then `npx lighthouse http://localhost:4321 --preset=desktop --throttling-method=simulate --output=html --output-path=lighthouse-report.html`; confirm Performance ≥ 95, LCP < 2.5s, CLS < 0.1, TBT < 200ms, FCP < 1.8s (Constitution Principle III — blocking before merge)
-- [ ] T029 Create Figma design file and confirm Principle II gate (code-first sync, Constitution v1.1.0): design the typographic hero layout in Figma to match the implemented code; create Figma Variables matching all token values from `src/design-tokens/tokens.css`; name the component `HeroSection` to match the codebase; publish Code Connect mapping; confirm in PR description that Figma and code agree on layout, spacing, typography, and naming with no divergence
+- [x] T024 Verify responsive layout in `src/components/sections/HeroSection.astro` at 320px, 768px, 1280px, and 2560px: hero name stays on one line at all breakpoints, title remains legible, no horizontal overflow; adjust `--font-size-hero-name` or padding tokens if any breakpoint breaks
+- [x] T025 [P] Verify WCAG AA contrast: confirm `--color-text-primary` (#0a0a0a) vs `--color-hero-bg` (#ffffff) ≥ 4.5:1 and `--color-text-secondary` (#757575) vs `--color-hero-bg` (#ffffff) ≥ 4.5:1; update token values in `src/design-tokens/tokens.css` if below threshold
+- [x] T026 [P] Run `npx astro check` from repository root; resolve all TypeScript errors to zero errors
+- [x] T027 [P] Delete unused `src/islands/SkillsAnimation.svelte` (dropped in Phase 4 pivot); confirm `npm run build` still succeeds with zero errors
+- [x] T028 Run Lighthouse CI gate: `npm run build && npm run preview`, then `npx lighthouse http://localhost:4321 --preset=desktop --throttling-method=simulate --output=html --output-path=lighthouse-report.html`; confirm Performance ≥ 95, LCP < 2.5s, CLS < 0.1, TBT < 200ms, FCP < 1.8s (Constitution Principle III — blocking before merge)
 
 ---
 
@@ -156,7 +155,7 @@ T024
   ↓
 [T025 [P] + T026 [P] + T027 [P]]
   ↓
-T028 → T029
+T028
 ```
 
 ---
@@ -171,7 +170,7 @@ T028 → T029
 
 ### Remaining
 
-4. Phase 6: Polish — responsive validation, contrast check, type check, Lighthouse CI, Figma sync
+4. Phase 6: Polish — responsive validation, contrast check, type check, Lighthouse CI
 
 ---
 
@@ -181,4 +180,4 @@ T028 → T029
 - `src/islands/SkillsAnimation.svelte` exists but is unused — delete it in T027 before merge
 - Token values in `tokens.css` were authored code-first; Figma sync is the T029 pre-merge gate (Constitution v1.1.0 Principle II)
 - Lighthouse CI (T028) is a blocking gate — the PR cannot merge with Performance < 95
-- Figma Code Connect (T029) is a blocking gate — the PR cannot merge without parity confirmation
+- Figma sync is owner-managed; not a speckit gate or merge blocker

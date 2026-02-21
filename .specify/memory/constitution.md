@@ -73,21 +73,14 @@ colors, spacing, typography, shadows, border-radius, and motion values.
   `Card/Project` → `<ProjectCard />`). Deviations require documented justification.
 - New components MUST be added to the design system before use in page layouts.
 
-### II. Figma ↔ Code Parity
+### II. Design Tooling (Owner-Managed)
 
-The design file and the codebase MUST be in full parity before any feature branch is
-merged to `main`. Either may serve as the starting point — both design-first and
-code-first workflows are valid.
+Figma design files and Code Connect mappings are maintained by the portfolio owner
+independently of the speckit workflow. They are not a gate for any feature branch merge.
 
-- **Design-first**: Design changes that affect component structure or tokens MUST be
-  reflected in code before the feature branch is merged.
-- **Code-first**: A feature may be prototyped and built in code before a Figma file
-  exists. The Figma file MUST then be created or updated to match the implementation
-  before the PR is merged to `main`.
-- Both MUST agree on layout, spacing, naming, and interactive states at merge time.
-  Neither "code ahead of Figma" nor "Figma ahead of code" is permitted at merge.
-- Figma Code Connect (or equivalent annotation) MUST be maintained for all published
-  components so the design-to-code link is machine-readable.
+- Speckit tasks MUST NOT include Figma file creation, Code Connect mapping, or design
+  tool sync as acceptance criteria or blocking gates.
+- The owner manages design↔code parity in Figma on their own schedule.
 
 ### III. Performance Budget (NON-NEGOTIABLE)
 
@@ -143,7 +136,7 @@ This is a portfolio site. Complexity MUST be justified against that scope.
 - **Deploy target**: Static hosting (Vercel / Netlify / Cloudflare Pages) — no SSR
   unless explicitly approved
 - **Image pipeline**: Astro built-in `<Image />` / `<Picture />`
-- **Design tool**: Figma with Figma Code Connect for component mapping
+- **Design tool**: Figma (owner-managed; not part of speckit workflow)
 
 ## Development Workflow
 
@@ -153,8 +146,7 @@ This is a portfolio site. Complexity MUST be justified against that scope.
 - The Performance Budget (Principle III) MUST be verified via Lighthouse CI on every
   PR that touches page layout, images, or third-party scripts
 - No branch touching content or layout may merge while placeholder content is present
-- Figma ↔ Code parity (Principle II) MUST be confirmed in the PR description before
-  merge
+- Figma sync is owner-managed and is not a PR merge gate
 
 ## Governance
 
@@ -171,4 +163,4 @@ This is a portfolio site. Complexity MUST be justified against that scope.
 - Complexity beyond portfolio scope MUST be justified in the relevant feature spec
   under a dedicated "Complexity Justification" section.
 
-**Version**: 1.1.0 | **Ratified**: 2026-02-19 | **Last Amended**: 2026-02-19
+**Version**: 1.2.0 | **Ratified**: 2026-02-19 | **Last Amended**: 2026-02-21

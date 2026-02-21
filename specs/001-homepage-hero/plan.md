@@ -33,13 +33,12 @@ this feature.
 | Principle | Status | Notes |
 |---|---|---|
 | I. Design-System First | ✅ PASS | Animation colors, timing, spacing, and motion values defined as CSS custom properties in `src/design-tokens/tokens.css` before any component is authored. No inline styles. |
-| II. Figma ↔ Code Parity | ✅ CODE-FIRST (v1.1.0) | Code-first workflow approved per Constitution v1.1.0. Figma design file will be created after implementation to match the code. Code Connect mapping for `<HeroSection />` and `<SkillsAnimation />` required before PR merge to `main`. |
+| II. Design Tooling | ✅ OWNER-MANAGED | Figma sync and Code Connect are managed by the owner independently; not a speckit gate or merge blocker. |
 | III. Performance Budget | ✅ PASS (pending validation) | Animation uses CSS keyframes on SVG elements (compositor thread, zero TBT). Text in initial HTML covers FCP/LCP (FR-007). CLS prevented by pre-sized island container. Validated by Lighthouse CI at build. |
 | IV. Content Authenticity | ⚠️ GATE | Owner's real name and professional title must be confirmed and supplied before any layout task is marked complete. No placeholder text may be committed to any pushed branch. |
 | V. Simplicity & Scope | ✅ PASS | No backend, no DB, no auth. Animation uses only native CSS and WAAPI. No external animation library. YAGNI applied throughout. |
 
-**Post-design re-check**: Required after Phase 1 confirms component names and token definitions
-align between Figma and code.
+**Post-design re-check**: N/A — Figma sync is owner-managed, not a speckit gate.
 
 ## Project Structure
 
